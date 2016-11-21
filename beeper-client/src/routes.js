@@ -1,8 +1,9 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 
-import Hello from './components/Hello.vue';
-import hello2 from './components/hello2.vue';
+import auth from './components/auth/auth.vue';
+import login from './components/auth/login.vue';
+import register from './components/auth/register.vue';
 
 //Make Vue Router methods available here
 
@@ -13,12 +14,18 @@ Vue.use(VueRouter);
 var router = new VueRouter({
     routes: [
         {
-            path: "/one",
-            component: Hello
-        },
-        {
-            path: "/two",
-            component: hello2
+            path: "/auth",
+            component: auth,
+            children: [
+                {
+                    path: "login",
+                    component: login
+                },
+                {
+                    path: "register",
+                    component: register
+                }
+            ]
         }
     ]
 });
