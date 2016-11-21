@@ -2,6 +2,7 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
+    <h1>{{name}}</h1>
   </div>
 </template>
 
@@ -12,6 +13,11 @@ export default {
   name: 'app',
   components: {
     Hello
+  },
+  data: function() {
+    return {
+    name: "John Doe"
+    }
   }
 }
 </script>
